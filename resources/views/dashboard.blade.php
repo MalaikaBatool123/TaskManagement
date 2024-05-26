@@ -7,8 +7,11 @@
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                
+            <div class="bg-white  ">
+                <h1 style="font-weight: bold;">Task Management System by Malaika Batool </h1><br> <br>
+                <a style="border:1px solid black; padding:10px" href="{{ route('tasks') }}">Explore Tasks</a>
+            
+            
             </div>
         </div>
     </div>
