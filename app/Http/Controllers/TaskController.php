@@ -8,6 +8,25 @@ use Illuminate\Support\Facades\Auth;
 
 class TaskController extends Controller
 {
+    public function index(Request $request)
+    {
+        $user = $request->user(); // Get the authenticated user
+    
+        $tasks = Task::where('user_id', $user->id)->get();
+    
+        return response()->json($tasks, 200);
+    }
+    public function getTasks()
+    {
+        return response()->json((Task::all()),200);
+    }
+    public function apiTasks()
+    {
+        $userId = Auth::id();
+        $tasks = Task::where('user_id', $userId)->get();
+
+        return response()->json($tasks); // Return tasks as JSON
+    }
     public function read()
     {
         $userId = Auth::id();
